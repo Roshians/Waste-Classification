@@ -1,10 +1,14 @@
-# ♻️ Waste Classification App 🗑️
+# ♻️ Waste Classification App 
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](LICENSE)
+[![Kaggle Dataset](https://img.shields.io/badge/dataset-Kaggle-blue)](https://www.kaggle.com/datasets/techsash/waste-classification-data)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
+[![View Demo](https://img.shields.io/badge/Demo-Streamlit%20App-brightgreen?logo=streamlit)](https://waste-classify.streamlit.app)
 
 This Streamlit web application allows users to classify images of waste into two categories: **Organic** or **Recyclable**. It leverages a pre-trained TensorFlow/Keras deep learning model to provide real-time predictions directly in your browser, either through image upload or live camera feed.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Dual Input Modes**: Seamlessly switch between uploading an image file (JPG, JPEG, PNG, WEBP) or capturing a live picture using your device's camera.
 - **Instant Classification**: Get immediate predictions (Organic or Recyclable) with a confidence score.
@@ -14,7 +18,7 @@ This Streamlit web application allows users to classify images of waste into two
 
 ---
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 Follow these steps to get the app running on your local machine.
 
@@ -71,23 +75,23 @@ This command will open the Streamlit app in your default web browser.
 
 ---
 
-## 🛠️ Model Information
+## Model Information
 
-The application uses a deep learning model to perform the classification.
+This application uses a deep learning model based on the MobileNetV2 architecture to perform waste classification.
 
+- **Base Model**: [MobileNetV2](https://arxiv.org/abs/1801.04381), a lightweight and efficient convolutional neural network designed for mobile and embedded vision applications.
 - **Model File**: `best_model.h5`
 - **Image Size**: Resized to (128, 128) pixels (`IMAGE_SIZE`)
 - **Normalization**: Pixel values are divided by `255.0` (`RESCALE_FACTOR`) to scale them to the 0–1 range.
 - **Classes**:
-  - `Recyclable` (Assumed index 0)
+  - `Recyclable` (Assumed index 0)  
   - `Organic` (Assumed index 1)
-
 
 > ⚠️ Note: The prediction logic in `app.py` assumes `predictions[0][0]` is the probability for 'Recyclable'. If your model's output order differs, adjust the `predicted_class_index` logic accordingly.
 
 ---
 
-## 💡 Usage
+## Usage
 
 1. **Launch the app**:
    ```bash
@@ -111,21 +115,24 @@ The application uses a deep learning model to perform the classification.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! If you find a bug or have an idea for improvement, please [open an issue](https://github.com/Roshians/Waste-Classification/issues) or submit a pull request.
+Pull requests are welcome! If you find bugs or have improvements in mind:
+
+1. **Fork** the repository
+2. **Create** a feature branch
+3. **Commit** your changes
+4. **Open** a pull request
 
 ---
 
-## 📄 License
+## License
 
-This project is open-sourced under the [MIT License](LICENSE).
+This project is released into the public domain under [The Unlicense](LICENSE).
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
-- Built with [Streamlit](https://streamlit.io)
-- Deep learning powered by [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io)
-- Image processing with [Pillow](https://python-pillow.org/)
-- Thanks to your friend for contributing to the stable code!
+- Built and Hosted with [Streamlit](https://streamlit.io)
+- [Waste Classification Dataset on Kaggle](https://www.kaggle.com/datasets/techsash/waste-classification-data)
